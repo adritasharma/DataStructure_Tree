@@ -1,4 +1,46 @@
 <hello name="{{ name }}"></hello>
-<pre>
-  {{myBinaryTree | json}}
-</pre>
+
+
+<div style="display: flex">
+	<div>
+		<div class="tree">
+			<ul>
+				<li>
+					<div><input type="checkbox"> Root <br/>
+						<button> 1 </button>
+					</div>
+					<ul>
+						<li>
+							<div>
+								Sub-1
+								<br/> <button> 2 </button>
+							</div>
+							<ul>
+								<li>
+									<div>
+										Sub-1-1
+										<br/> <button>4 </button>
+									</div>
+								</li>
+								<li>
+									<div> Sub-1-2
+										<br/> <button> 5 </button></div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div> Sub-2
+								<br/> <button> 3 </button></div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<pre>
+    {{myBinaryTree | json}}
+    </pre>
+	</div>
+
+</div>
