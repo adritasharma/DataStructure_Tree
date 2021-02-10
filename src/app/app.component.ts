@@ -19,6 +19,8 @@ export class AppComponent {
   myBinaryTree: BinaryTreeNode;
 
   preOrderData = [];
+  inOrderData = [];
+  postOrderData = [];
 
   constructor() {
     this.myBinaryTree = new BinaryTreeNode({ text: "root", value: 1 });
@@ -34,7 +36,9 @@ export class AppComponent {
     this.myBinaryTree.left = left;
     this.myBinaryTree.right = right;
 
-    this.printPreorder(this.myBinaryTree);
+    this.printPreorder({...this.myBinaryTree});
+    this.printInorder(this.myBinaryTree);
+
   }
 
   printPreorder(node: BinaryTreeNode) {
@@ -48,5 +52,19 @@ export class AppComponent {
 
     /* now recur on right subtree */
     this.printPreorder(node.right);
+  }
+
+  printInorder(node: BinaryTreeNode) {
+    if (node == null) return;
+
+    /* first recur on left child */
+    this.printInorder(node.left);
+
+    /* then print the data of node */
+    console.log(node.data.value + " ");
+    this.inOrderData.push(node.data.value);
+
+    /* now recur on right child */
+    this.printInorder(node.right);
   }
 }
